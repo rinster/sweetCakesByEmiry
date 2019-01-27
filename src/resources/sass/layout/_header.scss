@@ -15,9 +15,12 @@
 
     &__text-box {
         position: absolute;
-        top: 30%;
+        top: 35%;
         left: 50%;
         transform: translate(-50%, -50%);
         text-align: center;
+        outline: .6rem solid $color-white;
+        outline-offset: 3rem;
+        padding-top: 2rem;
     }
 }

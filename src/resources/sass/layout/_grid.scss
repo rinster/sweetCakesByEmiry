@@ -1,0 +1,54 @@
+.row {
+    max-width: $grid-width;
+    margin: 0 auto;
+    //.row:not() - accept everything except the last child
+    &:not(:last-child) {
+        margin-bottom: $gutter-vertical;
+    }
+
+    @include clearfix;
+
+    //REGEX: select all attributes that start with prefix "col-"
+    [class^="col-"] {
+        float: left; //float cols to left side
+
+        //Only make the gutter for the right margin
+        //excluding the last child
+        &:not(:last-child) {
+            margin-right: $gutter-horizontal;
+        }
+    }
+
+    .col-1-of-2 {
+        //Make calculation on width to 100% minus the gutter
+        //divide by 2 so it equally fits the row
+        width: calc((100% - #{$gutter-horizontal}) / 2);
+    }
+
+    .col-1-of-3 {
+        //Make calculation on width to 100% minus the 2 gutters
+        //divide by 3 so it equally fits the row
+        width: calc((100% - 2 * #{$gutter-horizontal}) / 3);
+    }
+
+    .col-2-of-3 {
+        //Multiply .col-1-of-2 by 2 and add the $gutter-horizontal
+        width: calc(2 * ((100% - 2 * #{$gutter-horizontal}) / 3) + #{$gutter-horizontal});
+    }
+
+    .col-1-of-4 {
+        //Make calculation on width to 100% minus the 3 gutters
+        //divide by 4 so it equally fits the row
+        width: calc((100% - 3 * #{$gutter-horizontal}) / 4);
+    }
+
+    .col-2-of-4 {
+        //Multiply .col-1-of-4 by 2 and add the $gutter-horizontal
+        width: calc(2 * ((100% - 3 * #{$gutter-horizontal}) / 4) + #{$gutter-horizontal});
+    }
+
+    .col-3-of-4 {
+        //Multiply .col-1-of-4 by 3 and add 2 of the $gutter-horizontal
+        width: calc(3 * ((100% - 3 * #{$gutter-horizontal}) / 4) + (2 * #{$gutter-horizontal}));
+    }
+}
