@@ -1,3 +1,48 @@
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-size: 62.5%; }
+
+body {
+  box-sizing: border-box; }
+
 body {
   font-family: "Lato", sans-serif;
-  font-weight: 400; }
+  font-weight: 400;
+  line-height: 1.7;
+  color: #777;
+  padding: 2.5rem; }
+
+.heading-primary {
+  color: #4f4a4a;
+  margin-bottom: 2rem; }
+  .heading-primary--main {
+    display: block;
+    font-family: "AutumnInNovember", sans-serif;
+    font-size: 8rem; }
+  .heading-primary--sub {
+    display: block;
+    text-transform: uppercase;
+    font-size: 3rem;
+    letter-spacing: 3.2rem;
+    font-family: "Raleway", sans-serif; }
+
+.header {
+  height: 95vh;
+  background-image: url("../img/header.jpg");
+  background-size: cover;
+  background-position: top;
+  position: relative;
+  -webkit-clip-path: polygon(0 0, 100% 0, 100% 80vh, 50% 100%, 0 80vh);
+  clip-path: polygon(0 0, 100% 0, 100% 80vh, 50% 100%, 0 80vh); }
+  .header__text-box {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    text-align: center; }
